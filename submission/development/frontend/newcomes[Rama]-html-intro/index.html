@@ -6,14 +6,13 @@
     <link rel="icon" href="https://www.google.com/s2/favicons?domain=github.com" type="image/x-icon">
 
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f2f5;
             color: #333;
             text-align: center;
             margin: 40px;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+            transition: background-color 0.3s, color 0.3s; 
         }
 
         .profile-container {
@@ -60,7 +59,7 @@
             border-radius: 5px;
         }
 
-        /* Styles for New Elements */
+     
         button {
             background-color: #007bff;
             color: white;
@@ -98,7 +97,7 @@
             color: #0056b3;
         }
         
-        /* Dark Mode Styles */
+        
         body.dark-mode {
             background-color: #121212;
             color: #ffffff;
@@ -169,15 +168,12 @@
         <h2>Hobi Saya</h2>
         <ul>
             <li>Membaca buku</li>
-            <li>Ngoding</li>
+            <li>bermain game</li>
             <li>Mendengarkan musik</li>
         </ul>
     </div>
 
     <script>
-        // --- Interactivity Logic ---
-
-        // 1. Change Background Color
         document.getElementById("changeColorBtn").onclick = function() {
             const colors = ["#f0f2f5", "#e0f7fa", "#ffebee", "#f3e5f5", "#e8f5e9"];
             const chosen = colors[Math.floor(Math.random() * colors.length)];
@@ -185,7 +181,6 @@
             alert("Warna background telah diubah!");
         };
 
-        // 2. Display Greeting
         document.getElementById("submitNameBtn").onclick = function() {
             const nameInput = document.getElementById("nameInput");
             const greetingElement = document.getElementById("greeting");
@@ -193,29 +188,25 @@
 
             if (name.trim() !== "") {
                 greetingElement.textContent = `Halo, ${name}! Selamat datang.`;
-                nameInput.value = ""; // Clear input after submission
+                nameInput.value = "";
             } else {
                 greetingElement.textContent = "Mohon masukkan nama Anda.";
             }
         };
 
-        // --- Bonus Challenge Logic ---
 
-        // 3. Real-time Digital Clock
         function updateClock() {
             const clockElement = document.getElementById("clock");
             const now = new Date();
-            // PadStart ensures the number has 2 digits (e.g., 09 instead of 9)
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
             clockElement.textContent = `${hours}:${minutes}:${seconds}`;
         }
 
-        setInterval(updateClock, 1000); // Update the clock every second
-        updateClock(); // Initial call to display clock immediately
+        setInterval(updateClock, 1000); 
+        updateClock();
 
-        // 4. Light/Dark Mode Toggle
         document.getElementById("themeToggleBtn").onclick = function() {
             document.body.classList.toggle("dark-mode");
         };
